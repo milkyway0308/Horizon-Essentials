@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="A:/파일 백업/마인크래프트 버킷/플러그인 실험용 서버 - 복사본 - 복사본/craftbukkitR1.0.jar"/>
+	<classpathentry kind="lib" path="A:/파일 백업/마인크래프트 버킷/Redika World/plugins/Vault.jar"/>
+	<classpathentry kind="lib" path="A:/파일 백업/마인크래프트 버킷/Redika World/plugins/PermissionsEx.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

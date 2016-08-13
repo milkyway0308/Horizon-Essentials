@@ -1,0 +1,184 @@
+main: Horizon_Essentials.Main
+version: 1.0-01a
+name: Horizon_Essentials
+prefix: [Horizon Essentials]
+softdepend: [MultiWorld,Multiverse-Core,Vault]
+description: 저 멀리 수평선 너머,개발의 끝까지.
+commands:
+  heal:
+    description: 자신 혹은 다른 플레이어를 치료합니다.
+    aliases: [힐,heals]
+  nick:
+    description: 자신 혹은 다른 플레이어의 이름을 변경합니다.
+    aliases: [닉네임,nickname]
+  motd:
+    description: 서버의 motd를 설정합니다.
+    aliases: [서버제목]
+  item:
+    description: 아이템을 얻습니다.
+    aliases: [i,아이템]
+  give:
+    description: 다른 플레이어에게 아이템을 지급합니다.
+    aliases: [주기,giveitem]
+  gamemode:
+    description: 게임모드를 설정합니다.
+    aliases: [gm,겜모,게임모드]
+  broadcast:
+    description: 서버에 메시지를 알립니다.이 메시지는 prefix가 붙지 않습니다.
+    aliases: [알리기]
+  say:
+    description: 서버에 메시지를 알립니다.이 메시지는 prefix가 붙습니다.
+    aliases: [공지]
+  tp:
+    description: 텔레포트를 합니다.
+    aliases: [teleport,텔레포트,tppos]
+  slay:
+    description: 플레이어를 죽입니다.대상 플레이어를 입력하지 않으면,자신이 죽습니다.
+    aliases: [도살,척살]
+  kill:
+    description: 메시지 없이 플레이어를 한방에 주님 곁으로 보냅니다.
+    aliases: [암살,사살]
+  whisper:
+    description: 귓속말을 합니다.
+    aliases: [tell,m,w,msg,귓속말,t]
+  suicide:
+    description: 자살합니다.
+    aliases: [자살]
+  lag:
+    description: 서버 정보입니다.
+    aliases: [서버현황,serverstatus]
+  tpa:
+    description: 텔레포트를 요청합니다.
+    aliases: [텔포요청,텔레포트요청,티피요청]
+  tpaccept:
+    description: 텔레포트 요청을 수락합니다.
+    aliases: [요청수락,티피수락,텔레포트수락,tpyes]
+  tpalist:
+    description: 텔레포트 요청 목록을 봅니다.
+    aliases: [티피목록,요청목록,텔레포트목록]
+  tpdeny:
+    description: 텔레포트를 거절합니다.
+    aliases: [티피거절,텔포거절,텔레포트거절,tpno]
+  mute:
+    description: 채팅을 봉인합니다
+    aliases: [아가리,채팅봉인,뮤트,악아리]
+  unmute:
+    description: 채팅 봉인을 해제합니다.
+    aliases: [채팅봉인해제]
+  setwarp:
+    description: 워프를 등록합니다.
+    aliases: [워프등록,워프추가,addwarp]
+  warp:
+    description: 워프합니다.
+    aliases: [워프,순간이동]
+  realname:
+    description: 진짜 이름을 조회합니다.여러개의 닉네임이 존재할 경우,마지막에 접속 혹은 마지막으로 변경한 사람의 닉네임으로 처리됩니다.
+    aliases: [진짜이름]
+  itemdata:
+    description: 들고 있는 아이템의 정보를 봅니다.
+    aliases: [아이템정보]
+  setspawn:
+    description: 스폰을 설정합니다.
+    aliases: [스폰설정,spawnset]
+  spawn:
+    description: 스폰으로 이동합니다.
+    aliases: [스폰,넴주]
+  money:
+    description: 돈을 확인하거나 관리합니다.
+    aliases: [돈,eco,계좌]
+  tpacceptall:
+    description: 요청된 모든 텔레포트를 받습니다.
+    aliases: [티피전체수락,텔레포트전체수락]
+  gmc:
+    description: 크리에이티브 모드로 변경합니다.
+    aliases: [크리에이티브]
+  gms:
+    description: 서바이벌 모드로 변경합니다.
+    aliases: [서바이벌]
+  gma:
+    description: 어드벤쳐 모드로 변경합니다.
+    aliases: [어드벤쳐]
+  killall:
+    description: 월드의 모든 살아있는 엔티티를 제거합니다.
+    aliases: [킬올]
+  tpall:
+    description: 서버에 접속한 모든 플레이어를 자신의 위치로 텔레포트합니다.
+    aliases: [티피올,강제호출]
+  warplist:
+    description: 워프 목록을 봅니다.
+    aliases: [워프목록]
+  ignore:
+    description: 플레이어를 차단합니다.
+    aliases: [차단]
+  unignore:
+    description: 차단을 해제합니다.
+    aliases: [차단해제]
+  ignoretpa:
+    description: 텔레포트를 차단합니다.
+    aliases: [텔레포트차단]
+  unignoretpa:
+    description: 텔레포트 차단을 해제합니다.
+    aliases: [텔레포트차단해제]
+  ignorechat:
+    description: 채팅를 차단합니다.
+    aliases: [채팅차단]
+  unignorechat:
+    description: 채팅 차단을 해제합니다.
+    aliases: [채팅차단해제]
+  ignorewhisper:
+    description: 귓속말를 차단합니다.
+    aliases: [귓속말차단]
+  unignorewhisper:
+    description: 귓속말 차단을 해제합니다.
+    aliases: [귓속말차단해제]
+  fly:
+    description: 비행을 설정합니다.
+    aliases: [플라이,비행]
+  server:
+    description: 서버 컨트롤러 커맨드입니다.
+    aliases: [서버,서버컨트롤러]
+  top:
+    description: 자신 위에 있는 가장 높은 블럭으로 이동합니다.
+    aliases: [탑]
+  jump:
+    description: 타게팅하고 있는 150블럭 내의 블럭으로 이동합니다.
+    aliases: [점프]
+  more:
+    description: 현재 들고 있는 아이템이 64스택 미만이면 64개로 만듭니다.
+    aliases: [최대개수,풀스택]
+  feed:
+    description: 허기를 최대로 채웁니다.
+    aliases: [허기]
+  book:
+    description: 과연 이 명령어가 작동을 할까..?
+    aliases: [unsign,서명지우기]
+  tempban:
+    description: 플레이어를 일정 시간동안 서버에서 차단합니다.
+    aliases: [시간밴,timeban]
+  unban:
+    description: 플레이어의 차단을 해제합니다.
+    aliases: [언밴]
+  setjail:
+    description: 감옥을 설정합니다.
+    aliases: [감옥설정]
+  jail:
+    description: 감옥에 가둡니다.
+    aliases: [가두기,수감]
+  strike:
+    description: 보고있는 곳에 번개를 강타하고나,선택한 플레이어의 위치에 내리치게 합니다.
+    aliases: [shock,lightning,번개]
+  break:
+    description: 보고있는 곳의 블럭을 파괴합니다.
+    aliases: [부수기]
+  jailview:
+    description: 수감 시간을 봅니다.
+    aliases: [jailtime,수감시간]
+  clear:
+    description: 인벤토리를 비웁니다.
+    aliases: [inventoryclear,인벤청소,ci,clearinventory]
+  summon:
+    description: 몬스터를 소환합니다.
+    aliases: [mob,소환,monster,몹]
+  seen:
+    description: 아이피나 플레이어를 조회합니다.
+    aliases: [아이피,ip]
