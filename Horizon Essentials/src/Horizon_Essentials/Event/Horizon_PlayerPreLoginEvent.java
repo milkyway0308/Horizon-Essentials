@@ -17,7 +17,7 @@ public void PreLogin(PlayerLoginEvent e){
 		DataManager.LoadPlayer(e.getPlayer());
 	if(DataManager.players.get((Bukkit.getOfflinePlayer(e.getPlayer().getName()))).tempBan >= System.currentTimeMillis())
 	{
-		e.disallow(Result.KICK_BANNED, super.msg.getMessage("½Ã°£ ¹ê ¸Þ½ÃÁö").replace("/*nextline*/", "\n").replace("[½Ã°£]", DataUtil.IntegerToTime((long)((DataManager.players.get((Bukkit.getOfflinePlayer(e.getPlayer().getName()))).tempBan) - (double)System.currentTimeMillis())/1000)).replace("[»çÀ¯]", DataManager.players.get((Bukkit.getOfflinePlayer(e.getPlayer().getName()))).banCause));
+		e.disallow(Result.KICK_BANNED, super.msg.getMessage("ì‹œê°„ ë°´ ë©”ì‹œì§€").replace("/*nextline*/", "\n").replace("[ì‹œê°„]", DataUtil.IntegerToTime((long)((DataManager.players.get((Bukkit.getOfflinePlayer(e.getPlayer().getName()))).tempBan) - (double)System.currentTimeMillis())/1000)).replace("[Â»Ã§Ã€Â¯]", DataManager.players.get((Bukkit.getOfflinePlayer(e.getPlayer().getName()))).banCause));
 	}
 }
 }
