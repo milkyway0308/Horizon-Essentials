@@ -29,34 +29,34 @@ public static boolean endThread = false;
 public static JavaPlugin usingPermission;
 private static String UsingPermission = "noPermissionHooked";
 public void onEnable() {
-	Bukkit.getConsoleSender().sendMessage("  ¡×7|  ¡×cHorizon Essentials Version " + this.getDescription().getVersion());
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Loading Plugin");
+	Bukkit.getConsoleSender().sendMessage("  Â§7|  Â§cHorizon Essentials Version " + this.getDescription().getVersion());
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Loading Plugin");
 	long time = System.currentTimeMillis();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6MainClass Load Success");
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Initalizing Variables");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6MainClass Load Success");
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Initalizing Variables");
 	instance = this;
 	ServerInfomation.last = System.currentTimeMillis();
 	ServerInfomation.runTPSChecker();
 	c = new EssentialsPlayer();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Initalized Variables");
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Loading Plugin Message From File");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Initalized Variables");
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Loading Plugin Message From File");
 	int a = getMessageFromFile();
 	DataManager.loadIPLogs();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Complete (" + a + " Message Loaded)");
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Loading Plugin Location");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Complete (" + a + " Message Loaded)");
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Loading Plugin Location");
 	int c = DataManager.loadWarps() + DataManager.loadSpawns() + DataManager.loadJails();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Complete (" + c + " Location Loaded)");
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Loading Config Options From File");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Complete (" + c + " Location Loaded)");
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Loading Config Options From File");
 	int e = this.getConfigFromFile();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Complete (" + e + " Config Options)");
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Loading Item Names From File");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Complete (" + e + " Config Options)");
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Loading Item Names From File");
 	int[] b = DataManager.loadItems();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Complete (" + b[0] + " Item Code With " + b[1] + " name Loaded)");
-	Bukkit.getConsoleSender().sendMessage(" ¡×7- Initalizing Commands and Plugins");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Complete (" + b[0] + " Item Code With " + b[1] + " name Loaded)");
+	Bukkit.getConsoleSender().sendMessage(" Â§7- Initalizing Commands and Plugins");
 	EventRegistry.registerEvents();
 	CommandsRegistry.Registercommands();
 	Horizon_MotdEvent.Load();
-	Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Complete With " + (System.currentTimeMillis() - time) + "ms");
+	Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Complete With " + (System.currentTimeMillis() - time) + "ms");
 	if(DataUtil.getOnlinePlayers().size() >= 1)
 	{
 		for(Player p : DataUtil.getOnlinePlayers())
@@ -64,7 +64,7 @@ public void onEnable() {
 			DataManager.players.put(p,EssentialsPlayer.LoadEssentialPlayer(p));
 			PlayerUtil.updatePlayerNicknames(p);
 		}
-		Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Loaded Player's Data");
+		Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Loaded Player's Data");
 	}
 	
 	Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
@@ -76,12 +76,12 @@ public void onEnable() {
 					if(endThread)
 						stop();
 					long startms = System.currentTimeMillis();
-					Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Starting running player saving thread..");
+					Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Starting running player saving thread..");
 					for(OfflinePlayer p : DataManager.players.keySet())
 					{
 						DataManager.players.get(p).SaveEssentialPlayer();
 					}
-					Bukkit.getConsoleSender().sendMessage(" ¡×7* ¡×6Complete With " + (System.currentTimeMillis() - startms) + "ms");
+					Bukkit.getConsoleSender().sendMessage(" Â§7* Â§6Complete With " + (System.currentTimeMillis() - startms) + "ms");
 					DataManager.saveWarps();
 					DataManager.saveSpawns();
 					DataManager.saveJails();
@@ -91,10 +91,10 @@ public void onEnable() {
 		}
 	},0L,24000L);
 	if(DataManager.configversion < DataManager.configdefversion)
-		Bukkit.getConsoleSender().sendMessage(" ¡×c* ÄÜÇÇ±× ¹öÀüÀÌ ÃÖ½Å ¹öÀüº¸´Ù ³·½À´Ï´Ù.ÄÜÇÇ±× ÆÄÀÏÀ» »èÁ¦ÇÏ°í Àç»ý¼ºÇØÁÖ¼¼¿ä.");
+		Bukkit.getConsoleSender().sendMessage(" Â§c* ì½˜í”¼ê·¸ ë²„ì „ì´ ìµœì‹  ë²„ì „ë³´ë‹¤ ë‚®ìŠµë‹ˆë‹¤.ì½˜í”¼ê·¸ íŒŒì¼ì„ ì‚­ì œí•˜ê³  ìž¬ìƒì„±í•´ì£¼ì„¸ìš”.");
 	EssentialsPlayer.loadAllPlayer();
-	Bukkit.getConsoleSender().sendMessage("[Horizon Essentials] ¡×6Special Thanks to:");
-	Bukkit.getConsoleSender().sendMessage("[Horizon Essentials] ¡×7Baw_Appie,Soa_,PeraSite,SM_seolmin,ShiraiNa,kang0432");
+	Bukkit.getConsoleSender().sendMessage("[Horizon Essentials] Â§6Special Thanks to:");
+	Bukkit.getConsoleSender().sendMessage("[Horizon Essentials] Â§7Baw_Appie,Soa_,PeraSite,SM_seolmin,ShiraiNa,kang0432");
 	SchedulerRunner.runJailScheduler();
 }
 @Override
@@ -120,7 +120,7 @@ public void lookPermission(){
 	}
 }
 @Override
-public int getMessageFromFile() { //ÀÌÅ¬·¡½º´Â ¹æ±Ý ±×ÇØ½Ã¸Ê¿¡ ÀÖ´Â°Ô Á¤»ó¾Æ´Ï´ø°¡..
+public int getMessageFromFile() { 
 	File f = new File("plugins/Horizon_Essentials/Message.lang");
 	int loaded = 0;
 	if(!f.exists())
@@ -139,11 +139,11 @@ public int getMessageFromFile() { //ÀÌÅ¬·¡½º´Â ¹æ±Ý ±×ÇØ½Ã¸Ê¿¡ ÀÖ´Â°Ô Á¤»ó¾Æ´Ï´ø
 			loaded++;
 		}
 		r.close();;
-	}catch(IOException e){c.Report(Bukkit.getConsoleSender(), ErrorType.IOException);} // ÀÌ°Å ¹®Á¦´Â ¾Æ´Ñ°Å°°Àºµ¥
+	}catch(IOException e){c.Report(Bukkit.getConsoleSender(), ErrorType.IOException);}
 	return loaded;
 }
 
-public int getConfigFromFile() { //ÀÌÅ¬·¡½º´Â ¹æ±Ý ±×ÇØ½Ã¸Ê¿¡ ÀÖ´Â°Ô Á¤»ó¾Æ´Ï´ø°¡..
+public int getConfigFromFile() {
 	File f = new File("plugins/Horizon_Essentials/configuration.txt");
 	int loaded = 0;
 	if(!f.exists())
@@ -161,85 +161,85 @@ public int getConfigFromFile() { //ÀÌÅ¬·¡½º´Â ¹æ±Ý ±×ÇØ½Ã¸Ê¿¡ ÀÖ´Â°Ô Á¤»ó¾Æ´Ï´ø°
 			String s1 = s.substring(0, a);
 			String s2 = s.substring(a + 1, s.length());
 			switch(s1){
-			case "ÅÚ·¹Æ÷Æ® ¿äÃ» ½Ã°£":
+			case "í…”ë ˆí¬íŠ¸ ìš”ì²­ ì‹œê°„":
 				try{
-					DataManager.tpAskDelay = Integer.parseInt(s2.replace("ÃÊ", "").replace(" ", ""));
+					DataManager.tpAskDelay = Integer.parseInt(s2.replace("ì´ˆ", "").replace(" ", ""));
 					loaded++;
 				}catch(Exception e){}
 				if(DataManager.tpAskDelay <= 0)
 					DataManager.tpAskDelay  = 1;
 				break;
-			case "ÅÚ·¹Æ÷Æ® ´ë±â ½Ã°£":
+			case "í…”ë ˆí¬íŠ¸ ëŒ€ê¸° ì‹œê°„":
 
 				try{
-					DataManager.waitDelay = Integer.parseInt(s2.replace("ÃÊ", "").replace(" ", ""));
+					DataManager.waitDelay = Integer.parseInt(s2.replace("ì´ˆ", "").replace(" ", ""));
 				}catch(Exception e){}
 				loaded++;
 				if(DataManager.waitDelay <= -1)
 					DataManager.waitDelay = 0;
 				break;
-			case "»ö±òÃ¤ÆÃ":
+			case "ìƒ‰ê¹”ì±„íŒ…":
 				DataManager.isColor = Boolean.parseBoolean(s2);
 				loaded++;
 				break;
-			case "°ü¸®ÀÚ Ã¤ÆÃ":
-				DataManager.opprefix = s2.replace("&", "¡×");
+			case "ê´€ë¦¬ìž ì±„íŒ…":
+				DataManager.opprefix = s2.replace("&", "Â§");
 				loaded++;
 				break;
-			case "ÅÚ·¹Æ÷Æ® µ¿ÀÛ Áß´Ü ¿©ºÎ":
+			case "í…”ë ˆí¬íŠ¸ ë™ìž‘ ì¤‘ë‹¨ ì—¬ë¶€":
 				DataManager.tpaMovestop = Boolean.valueOf(s2);
 				break;
-			case "ÄÜÇÇ±× ¹öÀü":
+			case "ì½˜í”¼ê·¸ ë²„ì „":
 				try{
 					DataManager.configversion = Integer.parseInt(s2.replace(" ", ""));
 				}catch(Exception e){DataManager.configversion = 0;}
 				break;
-			case "ÆÛ¹Ì¼Ç ÄªÈ£":
+			case "í¼ë¯¸ì…˜ ì¹­í˜¸":
 				DataManager.isUsingPermissionPrefix = Boolean.parseBoolean(s2);
 				break;
-			case "ÀÌÄÚ³ë¹Ì ±âº» ÅëÈ­":
+			case "ì´ì½”ë…¸ë¯¸ ê¸°ë³¸ í†µí™”":
 				EssentialsBase.economyMain = s2;
 				break;
-			case "ÀÌÄÚ³ë¹Ì ¼­ºê ÅëÈ­":
+			case "ì´ì½”ë…¸ë¯¸ ì„œë¸Œ í†µí™”":
 				EssentialsBase.economySub = s2;
 				break;
-			case "ÀÌÄÚ³ë¹Ì ¼­ºê ÅëÈ­ »ç¿ë":
+			case "ì´ì½”ë…¸ë¯¸ ì„œë¸Œ í†µí™” ì‚¬ìš©":
 				EssentialsBase.useSub = Boolean.parseBoolean(s2);
 				break;
-			case "ÀÌÄÚ³ë¹Ì ¼Ò¼ýÁ¡ Ç¥½Ã":
+			case "ì´ì½”ë…¸ë¯¸ ì†Œìˆ«ì  í‘œì‹œ":
 				EssentialsBase.usePoint = Boolean.parseBoolean(s2);
 				break;
-			case "ÀÌÄÚ³ë¹Ì ±âº»":
+			case "ì´ì½”ë…¸ë¯¸ ê¸°ë³¸":
 				 try{
 					 EssentialsBase.defaultmoney = Double.parseDouble(s2.replace(" ", ""));
 				 }catch(Exception e){}
 				 break;
-			case "ÀÌÄÚ³ë¹Ì ÃÖ´ë":
+			case "ì´ì½”ë…¸ë¯¸ ìµœëŒ€":
 				 try{
 					 EssentialsBase.EssentialsMaxValue = Double.parseDouble(s2.replace(" ", ""));
 				 }catch(Exception e){}
 				 break;
-			case "ÀÌÄÚ³ë¹Ì ÃÖ¼Ò":
+			case "ì´ì½”ë…¸ë¯¸ ìµœì†Œ":
 				 try{
 					 EssentialsBase.EssentialsMinValue = Double.parseDouble(s2.replace(" ", ""));
 				 }catch(Exception e){}
 				 break;
-			case "ÀÌº¥Æ® µ¥ÀÌÅÍ ÀúÀå ¿©ºÎ":
+			case "ì´ë²¤íŠ¸ ë°ì´í„° ì €ìž¥ ì—¬ë¶€":
 				DataManager.isSaveEventCancel = Boolean.parseBoolean(s2);
 				break;
-			case "±âº» È¨":
+			case "ê¸°ë³¸ í™ˆ":
 				 try{
 					DataManager.defaulthome = Integer.parseInt(s2.replace(" ", ""));
 					if(DataManager.defaulthome <= -1)
 						DataManager.defaulthome = 0;
 				 }catch(Exception e){}
-			case "¿£Æ¼Æ¼ ¼ÒÈ¯ Á¦ÇÑ":
+			case "ì—”í‹°í‹° ì†Œí™˜ ì œí•œ":
 				 try{
 					DataManager.summonamount = Integer.parseInt(s2.replace(" ", ""));
 					if(DataManager.summonamount <= 0)
 						DataManager.summonamount = 1;
 				 }catch(Exception e){}
-			case "°¨¿Á Å»Ãâ ÆÐ³ÎÆ¼":
+			case "ê°ì˜¥ íƒˆì¶œ íŒ¨ë„í‹°":
 				 try{
 						DataManager.addJail = Integer.parseInt(s2.replace(" ", ""));
 						if(DataManager.addJail <= -1)
@@ -252,7 +252,7 @@ public int getConfigFromFile() { //ÀÌÅ¬·¡½º´Â ¹æ±Ý ±×ÇØ½Ã¸Ê¿¡ ÀÖ´Â°Ô Á¤»ó¾Æ´Ï´ø°
 		r.close();
 		if(DataManager.isSaveEventCancel)
 			DataManager.loadState();
-	}catch(IOException e){c.Report(Bukkit.getConsoleSender(), ErrorType.IOException);} // ÀÌ°Å ¹®Á¦´Â ¾Æ´Ñ°Å°°Àºµ¥
+	}catch(IOException e){c.Report(Bukkit.getConsoleSender(), ErrorType.IOException);} 
 	return loaded;
 }
 
