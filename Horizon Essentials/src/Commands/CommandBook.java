@@ -26,7 +26,6 @@ public class CommandBook extends CommandsRegistry implements CommandExecutor{
 				 
 				 return false;
 			 }
-			 // 흠;
 			 ItemStack tmp = target.getItemInHand();
 			 BookMeta meta = (BookMeta) tmp.getItemMeta();
 			 tmp = new ItemStack(Material.BOOK_AND_QUILL, tmp.getAmount());
