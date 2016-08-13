@@ -25,23 +25,23 @@ public void Chat(AsyncPlayerChatEvent e)
 	if(DataManager.players.get(e.getPlayer()).canChat >= System.currentTimeMillis()){
 		e.setCancelled(true);
 		double time = ( DataManager.players.get(e.getPlayer()).canChat - System.currentTimeMillis()) / 1000;
-		super.msg.sendMessage(e.getPlayer(), "¹ÂÆ®Áß",new DoubleString("[½Ã°£]",DataUtil.IntegerToTime((long)time)));
+		super.msg.sendMessage(e.getPlayer(), "ë®¤íŠ¸ì¤‘",new DoubleString("[ì‹œê°„]",DataUtil.IntegerToTime((long)time)));
 		return;
 	}
 	if(e.getPlayer().getName().equals(DataManager.players.get(e.getPlayer()).chatName)){
 		if(e.getPlayer().isOp())
-			e.setFormat(e.getFormat().replace("%1$s", DataManager.opprefix + DataManager.players.get(e.getPlayer()).chatName + "¡×f"));
+			e.setFormat(e.getFormat().replace("%1$s", DataManager.opprefix + DataManager.players.get(e.getPlayer()).chatName + "Â§f"));
 	}else{
-		e.setFormat(e.getFormat().replace("%1$s", DataManager.players.get(e.getPlayer()).chatName + "¡×f"));
+		e.setFormat(e.getFormat().replace("%1$s", DataManager.players.get(e.getPlayer()).chatName + "Â§f"));
 	}
 
 	if(DataManager.isColor)
 		if(PlayerUtil.hasPermission(e.getPlayer(), PermissionType.ColorReplacer))
-			 e.setMessage(e.getMessage().replaceAll("&([0-9a-fl-o])", "¡×$1"));;
+			 e.setMessage(e.getMessage().replaceAll("&([0-9a-fl-o])", "Â¡Ã—$1"));;
 	if(DataManager.isUsingPermissionPrefix)
 	{
 		if(Main.isPermissionEx())
-			e.setFormat(PermissionsEx.getUser(e.getPlayer()).getGroups()[0].getPrefix().replace("&", "¡×") + "¡×f" + e.getFormat());
+			e.setFormat(PermissionsEx.getUser(e.getPlayer()).getGroups()[0].getPrefix().replace("&", "Â§") + "Â§f" + e.getFormat());
 	}
 	Set<Player> list = e.getRecipients();
 	for(Player p : list)
