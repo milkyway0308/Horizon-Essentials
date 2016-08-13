@@ -12,11 +12,11 @@ import DataUtil.PermissionType;
 import Utility.PlayerUtil;
 
 public class CommandBook extends CommandsRegistry implements CommandExecutor{
-	public final String Developer = "ÀÌ Å¬·¡½º´Â KiwiYou´Ô¿¡ ÀÇÇØ ÀÛ¼ºµÇ¾ú½À´Ï´Ù.";
+	public final String Developer = "ì´ í´ë˜ìŠ¤ëŠ” KiwiYouë‹˜ì— ì˜í•´ ì‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.";
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if(!PlayerUtil.hasPermission(sender, PermissionType.CommandBook)){
-			super.m.sendMessage(sender, "¸í·É¾î ±ÇÇÑ ºÎÁ·");
+			super.m.sendMessage(sender, "ëª…ë ¹ì–´ ê¶Œí•œ ë¶€ì¡±");
 			return false;
 		}
 		if(sender instanceof Player){
@@ -26,14 +26,14 @@ public class CommandBook extends CommandsRegistry implements CommandExecutor{
 				 
 				 return false;
 			 }
-			 // Èì;
+			 // í ;
 			 ItemStack tmp = target.getItemInHand();
 			 BookMeta meta = (BookMeta) tmp.getItemMeta();
 			 tmp = new ItemStack(Material.BOOK_AND_QUILL, tmp.getAmount());
-			 tmp.setItemMeta(meta); // ¿¡ÀÌ ¼³¸¶..¤»¤»¤»¤»¼³¸¶
+			 tmp.setItemMeta(meta);
 			 target.setItemInHand(tmp);
 		}else{
-			super.m.sendMessage(sender, "ÇÃ·¹ÀÌ¾î Àü¿ë Ä¿¸Çµå");
+			super.m.sendMessage(sender, "í”Œë ˆì´ì–´ ì „ìš© ì»¤ë§¨ë“œ");
 		}
 		return false;
 	}
